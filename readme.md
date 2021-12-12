@@ -1,8 +1,9 @@
-## USER STORY
-AS a remote worker
-I want to view recipes reccomendations based on local weather, calorie count, and mood.
-So that when I am hungry and do not know what to eat, I can have a rough idea of where to start.
+##
 
-# Laz Eat!
+MAde with Javascript, Css and HTML.
 
-Wy: LAzy + Eat = thats why!
+## Challenges
+
+Soime javascript issues i didn't know why they weren't working and I ddin't know hwy they didn't work
+
+[img]

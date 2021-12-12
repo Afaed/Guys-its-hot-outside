@@ -1,11 +1,10 @@
-const weatherurl = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}"
-
+const weatherurl = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={3328f8a7daab99cb7a90b190a02945b1}"
 $.ajax({url: weatherurl, method:"get"}).done(function (response) {
 	console.log(response);
 });
 //cors stands for cross orgin resource shairng which shares information-make sure its properly declasred anddisplayed. 
 var weather = document.getElementById(".weather-form")
-var weatherbox =document.getElementById(".card")
+var weatherbox =document.getElementById(".card-row")
 let apiKey = "3328f8a7daab99cb7a90b190a02945b1";
 let searchBtn = $(".searchBtn");
 let searchInput = $(".searchInput");

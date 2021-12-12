@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather!</title>
-    <link rel= stylesheet href="./assets/assets/css/style.css"><link>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather!</title>
+  <link rel=stylesheet href="./assets/assets/css/style.css">
+  <link>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
+
 <body>
-  <header id = "header">
+  <header id="header">
     <h1 class="head-text"> Dashboard</h1>
   </header>
-  <div class="sidenav">
-    <div class="sidenav">
-      <button><a href="#">About</a></button>
-      <button><a href="#">Services</a></button>
-      <button> <a href="#">Clients</a></button>
-      <button><a href="#">Contact</a></button>
+  <div class="container">
+    <div class="search col-lg-3 bg-light">
+        <div class="row">
+            <h1>Search for a City:</h1>
+        </div>
+        <div class="row">
+            <input type="text" class="searchInput" placeholder="Seattle">
+            <button type="submit" class="searchBtn btn-secondary btn-block">
+              <p>submit</p>
+            <i class="fas fa-search"></i>
+            </button>
+        </div>
+      </div>
+        <div class="historyItems"></div>
+      <div class="col-two-container">
+        <div class="forecast">
+            <div class="row mr-0">
+                <h1 class="cityName">City Name</h1>
+                <h1 class="currentDate"></h1>
+                <img class="weatherIcon"></img>
+            </div>
+            <div class="row">
+                <p class="temp">Temperature:</p>
+            </div>
+            <div class="row">
+                <p class="humidity">Humidity:</p>
+            </div>
+            <div class="row">
+                <p class="windSpeed">Wind Speed:</p>
+            </div>
+            <div class="row">
+                <p class="uvIndex">UV Index:</p>
+            </div>
+        </div>
+      <div class="five-day-forecast">
+        <div class="col-12">
+          <h1>5-Day Forecast</h1>
+      </div>
+  </div>
     </div>
   </div>
-    <main class="col-12 col-lg-9 d-flex flex-column">
-      <div class="container">
-      <div id="weather-form" class = "align-vertical border border-special">
-          <form input="text">
-            <p> Put text here</p>
-          </form>
-        </div>
-      </div> 
-        <div class = "container">
-        <div class="m-5 row justify-content-around">
-            <!--  -->
-            <div class="col-12 col-md-6 col-xl-3 mb-3">
-              <div class="card">
-                <h4 class="card header bg-dark text-light text-align-center">
-                  Weather
-                </h4>
-                <ul id="list-toDo" class="list-group list-group-flush">
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="./assets/assets/java/javascript.js"></script>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./assets/assets/java/javascript.js"></script>
 </body>
+
 </html>

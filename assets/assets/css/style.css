@@ -4,12 +4,26 @@
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 150px; /* Stay at the top */
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
   }
-  
+  body {
+    height: 100%;
+    margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+button:hover {
+  background-color: #feca57;
+}
   /* The navigation menu links */
   .sidenav a {
     padding: 6px 8px 6px 16px;
@@ -43,5 +57,88 @@
 }
 
 .head-text {
-    align-items: center;
+    text-align: center;
+}
+
+#search {
+  background-color: rgb(182, 31, 31);
+}
+
+.city {
+  background: blanchedalmond;
+}
+input {
+  width: 100%;
+}
+
+.searchbtn {
+  margin-top: 100px;
+}
+
+.forecast {
+  margin-top: 25px;
+  border: solid 1px #cecfd2;
+  margin-left: 5%;
+  min-width: 640px;
+  padding: 12px 15px 15px 15px;
+  height: 75%;
+}
+
+.citysearch {
+  border-width: 2px;
+  border-style: solid;
+  border-color: black
+}
+
+.citybtn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+ 
+    display: flex;
+    flex-direction: row;
+    max-width: 1000px;
+    height: 100%;
+}
+
+.five-day-card {
+  margin-left: 58.5px;
+  width: 175px;
+  height: auto;
+  border-radius: 5px;
+  color: white;
+  font-size: larger;
+  background-color: #3498db;
+}
+
+.five-day-card h3 {
+  margin: 5px;
+}
+
+.five-day-card img {
+  margin-left: 10%;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.row {
+  display: flex;
+  line-height: 50%;
+  margin: 5px 5px 5px 0px;
+}
+
+.row * {
+  margin-right: 5px;
+}
+.five-day-forecast {
+  top: 100px;
+  position: relative;
+  left: 20px;
 }

@@ -34,8 +34,14 @@ button:hover {
    
 }
 
-#search {
-  background-color: rgb(182, 31, 31);
+.search {
+  padding: 25px;
+  background-color: #f5f6fa;
+}
+
+.search h1 {
+  line-height:30px;
+
 }
 
 .city {
@@ -127,29 +133,32 @@ input {
 li:first-child {
   height: 100%;
   font-size: larger;
-  background-color: white;
+  background-color: #a9a9a9;
   border: solid 1px #cecfd2;
-  border-radius: 6px 6px 0px 0px;
+  border-radius: 6px 6px 6px 6px;
   padding: 12px 5px 12px 15px;
   list-style: none;
+  text-align: center;
 }
 
 li {
   height: 100%;
   font-size: larger;
-  background-color: white;
-  border: solid 1px;
-  border-radius: 0px 0px 0px 0px;
+  background-color: #a9a9a9;
+  border: solid 1px #cecfd2;
+  border-radius: 6px 6px 6px 6px;
   padding: 12px 5px 12px 15px;
   list-style: none;
+  text-align: center;
 }
 
 li:last-child {
   height: 100%;
   font-size: larger;
-  background-color: white;
+  background-color: #a9a9a9;
   border: solid 1px #cecfd2;
-  border-radius: 0px 0px 6px 6px;
+  border-radius: 6px 6px 6px 6px;
   padding: 12px 5px 12px 15px;
   list-style: none;
+  text-align: center;
 }

@@ -122,8 +122,7 @@ function getWeather(desiredCity) {
     })
         
     });
-    getFiveDayForecast();
-
+    getFiveDayForecast()
     function getFiveDayForecast() {
         card.empty();
         let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${desiredCity}&APPID=${apiKey}&units=imperial`;
@@ -137,16 +136,19 @@ function getWeather(desiredCity) {
                     date: fiveDayReponse.list[i].dt_txt,
                     icon: fiveDayReponse.list[i].weather[0].icon,
                     temp: fiveDayReponse.list[i].main.temp,
-                    humidity: fiveDayReponse.list[i].main.humidity
+                    wind: fiveDayReponse.list[i].main.wind,
+                    humidity: fiveDayReponse.list[i].main.humidity,
+                    
                 }
                 let dateStr = cityObj.date;
                 let trimmedDate = dateStr.substring(0, 10); 
                 let weatherIco = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
-                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity);
+                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity,cityObj.windSpeed);
             }
         })
     }
 }
+
 
 function createForecastCard(date, icon, temp, humidity) {
 
@@ -162,6 +164,7 @@ function createForecastCard(date, icon, temp, humidity) {
     cardIcon.attr("src", icon);
     cardTemp.text(`Temp: ${temp} °F`);
     cardHumidity.text(`Humidity: ${humidity}%`);
-    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity);
+    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity,);
 };
 
+renderSearchHistory()

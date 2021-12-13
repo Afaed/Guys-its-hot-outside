@@ -77,8 +77,8 @@ function getWeather(desiredCity) {
         let cityObj = {
             cityName: weatherData.name,
             cityTemp: weatherData.main.temp,
-            cityHumidity: weatherData.main.humidity,
             cityWindSpeed: weatherData.wind.speed,
+            cityHumidity: weatherData.main.humidity,
             cityUVIndex: weatherData.coord,
             cityWeatherIconName: weatherData.weather[0].icon
         }
@@ -101,7 +101,7 @@ function getWeather(desiredCity) {
             }else{
                 console.log("City already in searchHistory. Not adding to history list")
                 let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
-                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityWindSpeed, cityObj.cityHumidity, renderedWeatherIcon, uvData.value);
             }
         }else{
             let searchHistoryArr = JSON.parse(localStorage.getItem("searchHistory"));
@@ -111,12 +111,12 @@ function getWeather(desiredCity) {
                 // store our array of searches and save 
                 localStorage.setItem("searchHistory", JSON.stringify(searchHistoryArr));
                 let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
-                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityWindSpeed,cityObj.cityHumidity, renderedWeatherIcon, uvData.value);
                 renderSearchHistory(cityObj.cityName);
             }else{
                 console.log("City already in searchHistory. Not adding to history list")
                 let renderedWeatherIcon = `https:///openweathermap.org/img/w/${cityObj.cityWeatherIconName}.png`;
-                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityHumidity, cityObj.cityWindSpeed, renderedWeatherIcon, uvData.value);
+                renderWeatherData(cityObj.cityName, cityObj.cityTemp, cityObj.cityWindSpeed, cityObj.cityHumidity, renderedWeatherIcon, uvData.value);
             }
         }
     })
@@ -143,7 +143,7 @@ function getWeather(desiredCity) {
                 let dateStr = cityObj.date;
                 let trimmedDate = dateStr.substring(0, 10); 
                 let weatherIco = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
-                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity,cityObj.wind);
+                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.wind, cityObj.humidity,);
             }
         })
     }
@@ -157,16 +157,16 @@ function createForecastCard(date, icon, temp, wind, humidity) {
     let cardDate = $("<h3>").attr("class", "card-text");
     let cardIcon = $("<img>").attr("class", "weatherIcon");
     let cardTemp = $("<p>").attr("class", "card-text");
+    let cardWind = $("<p>").attr("class", "card-text");
     let cardHumidity = $("<p>").attr("class", "card-text");
-    let cardwind = $("<p>").attr("class", "card-text");
 
     card.append(fiveDayCardEl);
     cardDate.text(date);
     cardIcon.attr("src", icon);
     cardTemp.text(`Temp: ${temp} °F`);
+    cardWind.text(`Wind: ${wind} MPH`)
     cardHumidity.text(`Humidity: ${humidity}%`);
-    cardwind.text('wind: ${wind}% MPH')
-    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardwind, cardHumidity,);
+    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardWind, cardHumidity,);
 };
 
 renderSearchHistory();

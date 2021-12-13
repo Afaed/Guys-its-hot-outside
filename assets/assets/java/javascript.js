@@ -1,10 +1,7 @@
-const weatherurl = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={3328f8a7daab99cb7a90b190a02945b1}"
-$.ajax({url: weatherurl, method:"get"}).done(function (response) {
-	console.log(response);
-});
+
 //cors stands for cross orgin resource shairng which shares information-make sure its properly declasred anddisplayed. 
 var weather = document.getElementById(".weather-form")
-var weatherbox =document.getElementById(".card-row")
+var weatherbox =document.getElementById(".forecastFive")
 let apiKey = "3328f8a7daab99cb7a90b190a02945b1";
 let searchBtn = $(".searchBtn");
 let searchInput = $(".searchInput");
@@ -20,7 +17,7 @@ let tempEl = $(".temp");
 let humidityEl = $(".humidity");
 let windSpeedEl = $(".windSpeed");
 let uvIndexEl = $(".uvIndex");
-let cardRow = $(".card-row");
+let card = $(".five-day-forecast");
 
 var today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
@@ -128,7 +125,7 @@ function getWeather(desiredCity) {
     getFiveDayForecast();
 
     function getFiveDayForecast() {
-        cardRow.empty();
+        card.empty();
         let queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${desiredCity}&APPID=${apiKey}&units=imperial`;
         $.ajax({
             url: queryUrl,
@@ -148,7 +145,7 @@ function getWeather(desiredCity) {
                 createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity);
             }
         })
-    }   
+    }
 }
 
 function createForecastCard(date, icon, temp, humidity) {
@@ -160,11 +157,11 @@ function createForecastCard(date, icon, temp, humidity) {
     let cardTemp = $("<p>").attr("class", "card-text");
     let cardHumidity = $("<p>").attr("class", "card-text");
 
-    cardRow.append(fiveDayCardEl);
+    card.append(fiveDayCardEl);
     cardDate.text(date);
     cardIcon.attr("src", icon);
     cardTemp.text(`Temp: ${temp} °F`);
     cardHumidity.text(`Humidity: ${humidity}%`);
     fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity);
-}
+};
 

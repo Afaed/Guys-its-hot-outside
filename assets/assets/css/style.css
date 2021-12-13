@@ -1,14 +1,4 @@
-/* The sidebar menu */
-.sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 150px; /* Stay at the top */
-    left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-  }
+
   body {
     height: 100%;
     margin: 0;
@@ -25,39 +15,22 @@ button:hover {
   background-color: #feca57;
 }
   /* The navigation menu links */
-  .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  /* Style page content */
-  .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-  }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
 
 #header {
     background-color: blue;
     color: black;
     
 }
+.historyItems{
+  margin-top: 20px;
 
+}
+.historyItems:nth-child(){
+  margin-top: 20px;
+}
 .head-text {
     text-align: center;
+    color: #f1f1f1;
 }
 
 #search {
@@ -66,6 +39,11 @@ button:hover {
 
 .city {
   background: blanchedalmond;
+}
+
+img {
+  width: auto;
+  height: auto;
 }
 input {
   width: 100%;
@@ -98,13 +76,15 @@ input {
 }
 
 .container {
- 
     display: flex;
     flex-direction: row;
     max-width: 1000px;
     height: 100%;
 }
-
+.five-day-forecast h3 {
+  margin-top: 25px;
+  margin-left: 5%;
+}
 .five-day-card {
   margin-left: 58.5px;
   width: 175px;
@@ -112,9 +92,12 @@ input {
   border-radius: 5px;
   color: white;
   font-size: larger;
-  background-color: #0666a7;
+  background-color: #033b61;
 }
-
+.fiveforecast .card-text {
+  margin-bottom: 15px;
+  padding: 10px 30px 5px 10px;
+}
 .five-day-card h3 {
   margin: 5px;
 }
@@ -141,4 +124,35 @@ input {
   position: relative;
   display: flex;
   flex-direction: row;
+  left: 100px;
+}
+
+li:first-child {
+  height: 100%;
+  font-size: larger;
+  background-color: white;
+  border: solid 1px #cecfd2;
+  border-radius: 6px 6px 0px 0px;
+  padding: 12px 5px 12px 15px;
+  list-style: none;
+}
+
+li {
+  height: 100%;
+  font-size: larger;
+  background-color: white;
+  border: solid 1px;
+  border-radius: 0px 0px 0px 0px;
+  padding: 12px 5px 12px 15px;
+  list-style: none;
+}
+
+li:last-child {
+  height: 100%;
+  font-size: larger;
+  background-color: white;
+  border: solid 1px #cecfd2;
+  border-radius: 0px 0px 6px 6px;
+  padding: 12px 5px 12px 15px;
+  list-style: none;
 }

@@ -13,7 +13,7 @@ let weatherIconEl = $(".weatherIcon");
 let searchHistoryEl = $(".historyItems");
 
 // Right column locations
-let tempEl = $(".temp");
+let tempEl = $(".temperature");
 let humidityEl = $(".humidity");
 let windSpeedEl = $(".windSpeed");
 let uvIndexEl = $(".uvIndex");
@@ -63,7 +63,7 @@ function renderWeatherData(cityName, cityTemp, cityHumidity, cityWindSpeed, city
     tempEl.text(`Temperature: ${cityTemp} °F`);
     humidityEl.text(`Humidity: ${cityHumidity}%`);
     windSpeedEl.text(`Wind Speed: ${cityWindSpeed} MPH`);
-    uvIndexEl.text(`UV Index: ${uvVal}`);
+    uvIndexEl.text(`UV-Index: ${uvVal}`);
     weatherIconEl.attr("src", cityWeatherIcon);
 }
 

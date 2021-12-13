@@ -36,7 +36,6 @@ button:hover {
 
 .search {
   padding: 25px;
-  background-color: #f5f6fa;
 }
 
 .search h1 {
@@ -131,7 +130,7 @@ input {
 }
 
 li:first-child {
-  height: 100%;
+  height: 75%;
   font-size: larger;
   background-color: #a9a9a9;
   border: solid 1px #cecfd2;
@@ -142,7 +141,7 @@ li:first-child {
 }
 
 li {
-  height: 100%;
+  height: 75%;
   font-size: larger;
   background-color: #a9a9a9;
   border: solid 1px #cecfd2;
@@ -153,7 +152,7 @@ li {
 }
 
 li:last-child {
-  height: 100%;
+  height: 75%;
   font-size: larger;
   background-color: #a9a9a9;
   border: solid 1px #cecfd2;

@@ -136,21 +136,21 @@ function getWeather(desiredCity) {
                     date: fiveDayReponse.list[i].dt_txt,
                     icon: fiveDayReponse.list[i].weather[0].icon,
                     temp: fiveDayReponse.list[i].main.temp,
-                    wind: fiveDayReponse.list[i].main.wind,
+                    wind: fiveDayReponse.list[i].wind.speed,
                     humidity: fiveDayReponse.list[i].main.humidity,
                     
                 }
                 let dateStr = cityObj.date;
                 let trimmedDate = dateStr.substring(0, 10); 
                 let weatherIco = `https:///openweathermap.org/img/w/${cityObj.icon}.png`;
-                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity,cityObj.windSpeed);
+                createForecastCard(trimmedDate, weatherIco, cityObj.temp, cityObj.humidity,cityObj.wind);
             }
         })
     }
 }
 
 
-function createForecastCard(date, icon, temp, humidity) {
+function createForecastCard(date, icon, temp, wind, humidity) {
 
     // HTML elements we will create to later
     let fiveDayCardEl = $("<div>").attr("class", "five-day-card");
@@ -158,13 +158,15 @@ function createForecastCard(date, icon, temp, humidity) {
     let cardIcon = $("<img>").attr("class", "weatherIcon");
     let cardTemp = $("<p>").attr("class", "card-text");
     let cardHumidity = $("<p>").attr("class", "card-text");
+    let cardwind = $("<p>").attr("class", "card-text");
 
     card.append(fiveDayCardEl);
     cardDate.text(date);
     cardIcon.attr("src", icon);
     cardTemp.text(`Temp: ${temp} °F`);
     cardHumidity.text(`Humidity: ${humidity}%`);
-    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardHumidity,);
+    cardwind.text('wind: ${wind}% MPH')
+    fiveDayCardEl.append(cardDate, cardIcon, cardTemp, cardwind, cardHumidity,);
 };
 
-renderSearchHistory()
+renderSearchHistory();

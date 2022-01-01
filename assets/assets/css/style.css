@@ -36,7 +36,6 @@ body {
 .search {
   padding: 25px;
   align-items: left;
-  display: flex;
   flex-direction: column;
   left: inherit;
   width: auto;

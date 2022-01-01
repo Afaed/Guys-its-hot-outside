@@ -35,7 +35,9 @@ body {
 
 .search {
   padding: 25px;
-  left: -383px;
+  flex-direction: column;
+  left: -25px;
+  float: left;
 }
 
 .search h1 {
